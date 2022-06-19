@@ -6,7 +6,7 @@ from setuptools import setup
 import mpl_px_layout
 
 DESCRIPTION = "Making the matplotlib figures with an arbitrary layout specifying pixels"
-NAME = 'mpl-px-layout'
+NAME = 'mpl_px_layout'
 AUTHOR = 'Yoshiki Kubotani'
 AUTHOR_EMAIL = 'yoshikikubotani.lab@gmail.com'
 URL = 'https://github.com/YoshikiKubotani/arbitrary_mpl_figures'
@@ -45,7 +45,7 @@ CLASSIFIERS = [
     'Framework :: Matplotlib',
 ]
 
-with open('README.rst', 'r') as fp:
+with open('README.md', 'r', encoding='utf-8') as fp:
     readme = fp.read()
 long_description = readme
 
@@ -56,6 +56,7 @@ setup(name=NAME,
       maintainer_email=AUTHOR_EMAIL,
       description=DESCRIPTION,
       long_description=long_description,
+      long_description_content_type="text/markdown",
       license=LICENSE,
       url=URL,
       version=VERSION,
