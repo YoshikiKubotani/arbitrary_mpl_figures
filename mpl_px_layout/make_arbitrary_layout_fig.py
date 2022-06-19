@@ -115,7 +115,8 @@ def make_fixed_pixel_size_axes(
     ax_h_margin_px : Sequence[Sequence[int]]
         A list specifying the height in pixels of the margins between axes in the figure to create.
     off_index : Sequence[Tuple[int, int]]
-        The indexes specifying axes not to be dipict.
+        A list of indexes of the Axes objects not to be drawn.  The index is based on the lower-left corner of the figure, and increases
+        as it goes up for rows and right for columns.  Note that each index is specified in (column, row) order.
     fig_margin_inch : Collection[float], optional
         A tuple specifying the edge margins of a figure in inches in the order (left, top, right, bottom). (The default is (0.5, 0.5, 0.5, 0.5).)
     preview : bool, optional
@@ -133,7 +134,8 @@ def make_fixed_pixel_size_axes(
     Raises
     ------
     ValueError
-        Raise an error if the length of the input lists is incorrect.  Refer to the error sentence for detailed instructions.
+        Raise an error if the length of the input lists is incorrect, or the invalid type values are specified.  Refer to the error sentence
+        for detailed instructions.
     """
     # Initialize the logger object.
     logger = logging.getLogger(__name__)
@@ -170,6 +172,9 @@ def make_fixed_pixel_size_axes(
         if any([len(each_ax_w_px)-1 != len(each_ax_w_margin_px) for each_ax_w_px, each_ax_w_margin_px in zip(ax_w_px, ax_w_margin_px)]) \
             or any([len(each_ax_h_px)-1 != len(each_ax_h_margin_px) for each_ax_h_px, each_ax_h_margin_px in zip(ax_h_px, ax_h_margin_px)]):
             raise ValueError("The length of each margin sequence should be -1 of that of the corresponding sequence containing widths or heights of the Axes objects.")
+        # Each index specified in the `off_index` argument must be a tuple.
+        if any([not isinstance(each_index, tuple) for each_index in off_index]):
+            raise ValueError("Each index specified in the `off_index` argument must be a tuple.")
     except ValueError as e:
         logger.error(e)
 
@@ -252,7 +257,7 @@ def make_fixed_pixel_size_axes(
             )
 
             # If the index of the focused Axes object is specified in the off_index or its length is zero, the function skips that Axes object.
-            skip_flag = any([(row_id, column_id) == each_index for each_index in off_index])  or is_empty_box
+            skip_flag = any([(column_id, row_id) == each_index for each_index in off_index])  or is_empty_box
             if skip_flag:
                 continue
 
