@@ -1,1 +1,10 @@
+# file extentions
 __pycache__
+*.python-version
+*.vscode
+*.DS_Store
+
+# local directories
+dist/
+mpl_px_layout.egg-info/
+build/
