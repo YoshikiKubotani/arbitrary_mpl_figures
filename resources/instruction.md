@@ -1,4 +1,4 @@
-This markdown file is a simple instruction on using the `mpl_px_layout` library.  The `mpl_px_layout` is having only one function called `make_fixed_pixel_size_axes`.  And you can generate a figure with a few Axes inside by specifying each argument.
+This markdown file is a simple instruction on using the `arblay` library.  The `arblay` is having only one function called `make_fixed_pixel_size_axes`.  And you can generate a figure with a few Axes inside by specifying each argument.
 
 Since you can see the explanation of each argument by reading the docstring of the function, here, I provide the step of making `ax_w_px`, `ax_h_px`, `ax_w_margin_px`, and `ax_h_margin_px` arguments from the objective figure you have in your mind.
 

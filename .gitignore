@@ -6,5 +6,5 @@ __pycache__
 
 # local directories
 dist/
-mpl_px_layout.egg-info/
+arblay.egg-info/
 build/

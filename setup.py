@@ -3,16 +3,16 @@
 # License: MIT
 
 from setuptools import setup
-import mpl_px_layout
+import arblay
 
 DESCRIPTION = "Making the matplotlib figures with an arbitrary layout specifying pixels"
-NAME = 'mpl_px_layout'
+NAME = 'arblay'
 AUTHOR = 'Yoshiki Kubotani'
 AUTHOR_EMAIL = 'yoshikikubotani.lab@gmail.com'
 URL = 'https://github.com/YoshikiKubotani/arbitrary_mpl_figures'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/YoshikiKubotani/arbitrary_mpl_figures'
-VERSION = mpl_px_layout.__version__
+VERSION = arblay.__version__
 PYTHON_REQUIRES = ">=3.7"
 
 INSTALL_REQUIRES = [
@@ -21,7 +21,7 @@ INSTALL_REQUIRES = [
 ]
 
 PACKAGES = [
-    'mpl_px_layout'
+    'arblay'
 ]
 
 CLASSIFIERS = [
