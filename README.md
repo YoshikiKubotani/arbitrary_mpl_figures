@@ -17,3 +17,5 @@ pip install mpl_px_layout
 # How to Use
 
 See description in [instruction.md](/resources/instruction.md).
+
+You can try to generate some examples from [demo.ipynb](/demo.ipynb) as well.
