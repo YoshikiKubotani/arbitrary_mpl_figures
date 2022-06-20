@@ -1,6 +1,6 @@
 # mpl_px_layout
 
-![0_readme](/resources/0_readme.png)
+<img src="https://raw.githubusercontent.com/YoshikiKubotani/arbitrary_mpl_figures/master/resources/0_readme.png">
 
 This repository stores a source code for the `mpl_px_layout` library.  `mpl_px_layout` is a small unofficial extension of [matplotlib](https://github.com/matplotlib/matplotlib), which aims at making matplotlib figures with arbitrary layouts.  You can easily generate a variety of figures specifying each Axes object size in pixel.
 
