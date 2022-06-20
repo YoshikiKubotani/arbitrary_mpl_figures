@@ -13,11 +13,11 @@ URL = 'https://github.com/YoshikiKubotani/arbitrary_mpl_figures'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/YoshikiKubotani/arbitrary_mpl_figures'
 VERSION = mpl_px_layout.__version__
-PYTHON_REQUIRES = ">=3.6"
+PYTHON_REQUIRES = ">=3.7"
 
 INSTALL_REQUIRES = [
-    'numpy >=1.20.3',
-    'matplotlib>=3.3.4',
+    'numpy >=1.20',
+    'matplotlib>=3.0',
 ]
 
 PACKAGES = [
@@ -28,7 +28,6 @@ CLASSIFIERS = [
     'Intended Audience :: Science/Research',
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
