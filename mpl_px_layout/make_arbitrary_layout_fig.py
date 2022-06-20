@@ -149,34 +149,30 @@ def make_fixed_pixel_size_axes(
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
 
-    # Catch error messages.
-    try:
-        # The empty list is not allowed for the sequence containing widths or heights of the Axes objects.
-        if len(ax_w_px) == 0 or len(ax_h_px) == 0:
-            raise ValueError("The empty list is NOT allowed for the sequence containing widths or heights of the Axes objects.")
-        # All the sequence in the sequence containing widths or heights of the Axes objects should not be empty.
-        if any([len(each_ax_w_px) == 0 for each_ax_w_px in ax_w_px]) or any([len(each_ax_h_px) == 0 for each_ax_h_px in ax_h_px]):
-            raise ValueError("All the sequence in the sequence containing widths or heights of the Axes objects should NOT be empty.")
-        # Both the length of the sequence containing widths or heights of the Axes objects and that of the sequence containing margins should be the same.
-        if len(ax_w_px) != len(ax_w_margin_px):
-            raise ValueError(
-                "The number of rows in the sequence containing the width (i.e. len(ax_w_px) ) and the sequence containing its margin (i.e. len(ax_w_margin_px) ) \
-                must be the same, but they do not match because the former is {:2d} and the latter is {:2d}.".format(len(ax_w_px), len(ax_w_margin_px))
-            )
-        if len(ax_h_px) != len(ax_h_margin_px):
-            raise ValueError(
-                "The number of columns in the sequence containing the height (i.e. len(ax_h_px) ) and the sequence containing its margin (i.e. len(ax_h_margin_px) ) \
-                must be the same, but they do not match because the former is {:2d} and the latter is {:2d}.".format(len(ax_h_px), len(ax_h_margin_px))
-            )
-        # The length of each margin sequence should be -1 of that of the corresponding sequence containing widths or heights of the Axes objects.
-        if any([len(each_ax_w_px)-1 != len(each_ax_w_margin_px) for each_ax_w_px, each_ax_w_margin_px in zip(ax_w_px, ax_w_margin_px)]) \
-            or any([len(each_ax_h_px)-1 != len(each_ax_h_margin_px) for each_ax_h_px, each_ax_h_margin_px in zip(ax_h_px, ax_h_margin_px)]):
-            raise ValueError("The length of each margin sequence should be -1 of that of the corresponding sequence containing widths or heights of the Axes objects.")
-        # Each index specified in the `off_index` argument must be a tuple.
-        if any([not isinstance(each_index, tuple) for each_index in off_index]):
-            raise ValueError("Each index specified in the `off_index` argument must be a tuple.")
-    except ValueError as e:
-        logger.error(e)
+    # The empty list is not allowed for the sequence containing widths or heights of the Axes objects.
+    if len(ax_w_px) == 0 or len(ax_h_px) == 0:
+        raise ValueError("The empty list is NOT allowed for the sequence containing widths or heights of the Axes objects.")
+    # All the sequence in the sequence containing widths or heights of the Axes objects should not be empty.
+    if any([len(each_ax_w_px) == 0 for each_ax_w_px in ax_w_px]) or any([len(each_ax_h_px) == 0 for each_ax_h_px in ax_h_px]):
+        raise ValueError("All the sequence in the sequence containing widths or heights of the Axes objects should NOT be empty.")
+    # Both the length of the sequence containing widths or heights of the Axes objects and that of the sequence containing margins should be the same.
+    if len(ax_w_px) != len(ax_w_margin_px):
+        raise ValueError(
+            "The number of rows in the sequence containing the width (i.e. len(ax_w_px) ) and the sequence containing its margin (i.e. len(ax_w_margin_px) ) \
+            must be the same, but they do not match because the former is {:2d} and the latter is {:2d}.".format(len(ax_w_px), len(ax_w_margin_px))
+        )
+    if len(ax_h_px) != len(ax_h_margin_px):
+        raise ValueError(
+            "The number of columns in the sequence containing the height (i.e. len(ax_h_px) ) and the sequence containing its margin (i.e. len(ax_h_margin_px) ) \
+            must be the same, but they do not match because the former is {:2d} and the latter is {:2d}.".format(len(ax_h_px), len(ax_h_margin_px))
+        )
+    # The length of each margin sequence should be -1 of that of the corresponding sequence containing widths or heights of the Axes objects.
+    if any([len(each_ax_w_px)-1 != len(each_ax_w_margin_px) for each_ax_w_px, each_ax_w_margin_px in zip(ax_w_px, ax_w_margin_px)]) \
+        or any([len(each_ax_h_px)-1 != len(each_ax_h_margin_px) for each_ax_h_px, each_ax_h_margin_px in zip(ax_h_px, ax_h_margin_px)]):
+        raise ValueError("The length of each margin sequence should be -1 of that of the corresponding sequence containing widths or heights of the Axes objects.")
+    # Each index specified in the `off_index` argument must be a tuple.
+    if any([not isinstance(each_index, tuple) for each_index in off_index]):
+        raise ValueError("Each index specified in the `off_index` argument must be a tuple.")
 
     num_column = len(ax_h_px)
     num_row = len(ax_w_px)
