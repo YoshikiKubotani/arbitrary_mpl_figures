@@ -16,13 +16,8 @@ VERSION = mpl_px_layout.__version__
 PYTHON_REQUIRES = ">=3.6"
 
 INSTALL_REQUIRES = [
-    'matplotlib>=3.3.4',
-    'seaborn>=0.11.0',
     'numpy >=1.20.3',
-    'pandas>=1.2.4',
     'matplotlib>=3.3.4',
-    'scipy>=1.6.3',
-    'scikit-learn>=0.24.2',
 ]
 
 PACKAGES = [
