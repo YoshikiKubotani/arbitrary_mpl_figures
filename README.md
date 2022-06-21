@@ -1,3 +1,7 @@
+[![PyPI version](https://badge.fury.io/py/arblay.svg)](https://badge.fury.io/py/arblay)
+[![Downloads](https://pepy.tech/badge/arblay)](https://pepy.tech/project/arblay)
+[![GitHub license](https://img.shields.io/github/license/YoshikiKubotani/arbitrary_mpl_figures)](https://github.com/YoshikiKubotani/arbitrary_mpl_figures/blob/master/LICENSE)
+
 # arblay
 
 <img src="https://raw.githubusercontent.com/YoshikiKubotani/arbitrary_mpl_figures/master/resources/0_readme.png">
